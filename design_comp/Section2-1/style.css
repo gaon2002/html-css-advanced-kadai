@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================================================
+　なるべくPC・スマホで共用できるレスポンシブスタイルとする
+================================================== */
+body{
+  background-color: #ffffff;
+  /* Google fontを適用 */
+  font-family: 'Noto Sans JP', sans-serif;
+}
+h1{
+  font-size: 34px;
+  text-align: center;
+}
+/* ※1回目は、PCとスマホそれぞれでコードを書いていたが、Wrapを使ってなるべく共通スタイルとする */
+/* iPad-miniのサイズ：デベロッパーツールの数字が768x1024なので、数字を変えている  */
+/* @media screen and (min-width: 768px) { */
+
+/* header */
+header {
+  max-width: 100%;
+  height: auto;
+}
+nav{
+  max-width: 560px;
+  height: auto;
+  display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  margin: 15px auto 15px auto;
+}
+#hd-mp{
+  line-height: 69px;
+  width: 220px;
+  height: 69px;
+  border: solid 1px #000000;
+  text-decoration: none;
+  text-align: center;
+}
+nav > div{
+  display: flex;
+    flex-wrap: wrap;
+  float: right;
+  height: 69px;
+  line-height: 69px;
+} 
+nav > div > a{
+  height: 69px;
+  line-height: 69px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+a:visited{
+  color: #000000;
+}
+
+/* メインビジュアル画像 */
+.main-img{
+  width: 100%;
+}
+img{
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Aboutセクション */
+#about{
+  max-width: 960px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* アイテムを中央にまとめる */
+  align-items: center;
+}
+#main-person{
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  /* object-fit：画像をトリミングするためのCSSプロパティ */
+  /* この値を指定すると、画像は縦横比を維持しながら、コンテナ全体を覆うように拡大・縮小される */
+  /* 表示されるのは画像の縦横中央の部分で、はみ出た箇所はトリミングされます。 */
+  object-fit: cover;
+}
+#describe{
+  /* 箇条書きの点のところをひっこめるためにパディングする */
+  padding-left: 40px;
+  align-self: center;
+  margin: 0 auto;
+}
+
+/* Worksセクション */
+#works{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  max-width: 960px;
+  margin: 0 auto 32px auto;
+}
+ /* 写真と説明 */
+ @media (min-width: 768px) {
+.works-photo{
+  max-width: 200px;
+}
+}
+p{
+  font-size: 18px;
+  text-align: center;
+}
+
+/* footer設定 */
+footer{
+  margin-bottom: 30px;
+  text-align: center;
+}
+footer > p{
+  /* デフォルトの余白を削除???? */
+  margin: 0;
+}
+
+/* ==============
+　スマホ用スタイル
+================= */
+/* iPad-miniのサイズ：デベロッパーツールの数字が768x1024なので、数字を変えている  */
+@media screen and (max-width: 767px) {
+  .works-photo{
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+  .works-photo > img{
+    /* imgのサイズ指定をした際にcenterに持ってくるには？ */
+    max-width: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
